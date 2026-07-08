@@ -1,0 +1,87 @@
+---
+import Parser from 'rss-parser';
+const parser = new Parser();
+
+const essays = await parser.parseURL('https://essayswritten.substack.com/feed');
+const recipes = await parser.parseURL('https://recipeswritten.substack.com/feed');
+---
+
+<div class="space-y-16">
+  <!-- Essays Section -->
+  <section id="essays">
+    <h2 class="text-4xl font-bold mb-8 text-zinc-900">Latest Essays</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      {essays.items.slice(0, 4).map((post: any) => (
+        <article class="group bg-white border border-stone-200 rounded-3xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col">
+          {post.enclosure?.url && (
+            <img 
+              src={post.enclosure.url} 
+              alt="" 
+              class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500" 
+            />
+          )}
+          <div class="p-8 grow">
+            <h3 class="text-lg font-semibold mb-3 leading-tight text-zinc-900 group-hover:text-primary transition-colors">
+              <a href={post.link} target="_blank">{post.title}</a>
+            </h3>
+            
+            <p class="text-sm text-stone-400 mb-4">
+              {new Date(post.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+            
+            <p class="line-clamp-3 text-zinc-700 mb-6">
+              {post.contentSnippet || post.description}
+            </p>
+            
+            <a 
+              href={post.link} 
+              target="_blank"
+              class="inline-flex items-center gap-2 text-pink font-medium hover:text-pink-dark transition-colors"
+            >
+              Read on Substack →
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <!-- Recipes Section -->
+  <section id="recipes">
+    <h2 class="text-4xl font-bold mb-8 text-zinc-900">Latest Recipes</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      {recipes.items.slice(0, 4).map((post: any) => (
+        <article class="group bg-white border border-stone-200 rounded-3xl overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+          {post.enclosure?.url && (
+            <img 
+              src={post.enclosure.url} 
+              alt="" 
+              class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-500" 
+            />
+          )}
+          <div class="p-8 grow">
+            <h3 class="text-lg font-semibold mb-3 leading-tight text-zinc-900 group-hover:text-primary transition-colors">
+              <a href={post.link} target="_blank">{post.title}</a>
+            </h3>
+            
+            <p class="text-sm text-stone-400 mb-4">
+              {new Date(post.pubDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+            
+            <p class="line-clamp-3 text-zinc-700 mb-6">
+              {post.contentSnippet || post.description}
+            </p>
+            
+            <a 
+              href={post.link} 
+              target="_blank"
+              class="inline-flex items-center gap-2 text-pink font-medium hover:text-pink-dark transition-colors"
+            >
+              Read on Substack →
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</div>

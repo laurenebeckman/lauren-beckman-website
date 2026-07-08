@@ -1,0 +1,101 @@
+---
+const instagramPosts = [
+  {
+    url: "https://www.instagram.com/p/DXpQbRRiWKk/",
+    img: "/images/ig1.jpg",           // put images in public/images/
+    caption: "pictures taken: xxxxxiii ▪︎ 02.25.2025"
+  },
+  {
+    url: "https://www.instagram.com/p/DXaA9bnCa9i/",
+    img: "/images/ig2.jpg",
+    caption: "pictures taken: xxxxx ▪︎ 12.21.2019"
+  },
+  {
+    url: "https://www.instagram.com/p/DXUR8E1Dj8f/",
+    img: "/images/ig3.jpg",           // put images in public/images/
+    caption: "pictures taken: part xxxxix ▪︎ 11.03.2017"
+  },
+  {
+    url: "https://www.instagram.com/p/DXRzLM8jnGs/",
+    img: "/images/ig4.jpg",           // put images in public/images/
+    caption: "pictures taken: xxxxviii ▪︎ 08.15.2019"
+  },
+  {
+    url: "https://www.instagram.com/p/DXPqTgRjqcZ/",
+    img: "/images/ig5.jpg",           // put images in public/images/
+    caption: "pictures taken: xxxxvii ▪︎ 06.04.2020"
+  },
+  {
+    url: "https://www.instagram.com/p/DXPW2Tnjmgx/",
+    img: "/images/ig6.jpg",           // put images in public/images/
+    caption: "pictures taken: xxxvi ▪︎ 08.13.2019"
+  },
+  {
+    url: "https://www.instagram.com/p/DXKgO9ciQ6F/",
+    img: "/images/ig7.jpg",           // put images in public/images/
+    caption: "pictures taken: part xxxxv ▪︎ 03.11.2025"
+  },
+  {
+    url: "https://www.instagram.com/p/DXFY2CrCRb-/",
+    img: "/images/ig8.jpg",           // put images in public/images/
+    caption: "pictures taken: part xxxxii ▪︎ 05.25.2025"
+  },
+  {
+    url: "https://www.instagram.com/p/DXC4GQ3Ceg9/",
+    img: "/images/ig9.jpg",           // put images in public/images/
+    caption: "illinois vs. purdue ▪︎ circa fall 2022"
+  },
+  {
+    url: "https://www.instagram.com/p/DWx60YxjqtB/",
+    img: "/images/ig10.jpg",           // put images in public/images/
+    caption: "ribbit! ▪︎ 05.16.2017"
+  },
+  {
+    url: "https://www.instagram.com/p/DWolUC5DgWS/",
+    img: "/images/ig11.jpg",           // put images in public/images/
+    caption: "backseat pilot ▪︎ circa 2006"
+  },
+  {
+    url: "https://www.instagram.com/p/DWVAKqDCRZT/",
+    img: "/images/ig12.jpg",           // put images in public/images/
+    caption: "pictures taken: part xxii ▪︎ 06.15.2019"
+  },
+];
+---
+
+<section id="photography" class="max-w-6xl mx-auto px-6 py-16">
+  <h2 class="text-4xl font-bold tracking-tight text-center mb-12">Photography</h2>
+  
+  <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+    {instagramPosts.map((post) => (
+      <a 
+        href={post.url} 
+        target="_blank"
+        class="group block break-inside-avoid"
+      >
+        <div class="relative overflow-hidden rounded-3xl shadow-md group-hover:shadow-2xl transition-all duration-300">
+          <img 
+            src={post.img} 
+            alt={post.caption}
+            class="w-full aspect-[4/5] object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+            <p class="text-white text-sm leading-snug line-clamp-3">
+              {post.caption}
+            </p>
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+
+  <div class="text-center mt-12">
+    <a 
+      href="https://www.instagram.com/laurenebeckman_/" 
+      target="_blank"
+      class="inline-flex items-center gap-3 text-lg font-medium hover:text-pink-500 transition-colors"
+    >
+      See more on Instagram →
+    </a>
+  </div>
+</section>

@@ -1,0 +1,81 @@
+---
+import BaseHead from '../../components/BaseHead.astro';
+import Footer from '../../components/Footer.astro';
+import Header from '../../components/Header.astro';
+import SubstackFeed from '../../components/SubstackFeed.astro';
+import InstagramGrid from '../../components/InstagramGrid.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+---
+
+<!doctype html>
+<html lang="en" class="scroll-pt-20 scroll-smooth">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      main { width: 100%; max-width: 100%; margin: 0; padding: 0; }
+    </style>
+  </head>
+  <body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
+    <Header />
+
+    <main>
+      <!-- Hero -->
+      <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <img 
+          src="/images/hero.jpg" 
+          alt="Lauren Beckman" 
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-linear-to-b from-black/40 via-black/60 to-black/70"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white">
+          <h1 class="text-6xl md:text-7xl font-bold tracking-tighter mb-6">
+            Lauren Beckman
+          </h1>
+          
+          <p class="text-2xl md:text-3xl mb-6 text-white/90">
+            Law student, engineer, writer, photographer, cook. This is where all of it lives.
+          </p>
+          
+          <p class="text-lg md:text-xl max-w-md mx-auto mb-12 text-white/80">
+            Personal essays, recipes, and photography by Lauren Beckman, a law student, engineer, and lifelong curious person.
+          </p>
+
+          <!-- Buttons -->
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="#essays" 
+              class="group bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2">
+              Read Latest Essays
+              <span class="group-hover:translate-x-1 transition">→</span>
+            </a>
+            
+            <a href="#photography" 
+              class="group border-2 border-white/80 hover:bg-white/10 px-8 py-4 rounded-full font-medium text-lg transition-all duration-300 hover:scale-105 active:scale-95">
+              View Photography
+            </a>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/70">
+          <span class="text-xs tracking-widest">SCROLL</span>
+          <div class="w-px h-8 bg-linear-to-b from-transparent via-white/50 to-transparent"></div>
+        </div>
+      </section>
+
+      <!-- Substack Feed -->
+      <div class="max-w-6xl mx-auto px-6 py-16">
+        <SubstackFeed />
+      </div>
+
+      <!-- Instagram Grid -->
+      <InstagramGrid />
+    </main>
+
+    <Footer />
+  </body>
+</html>

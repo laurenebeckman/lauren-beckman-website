@@ -1,0 +1,93 @@
+---
+const today = new Date();
+---
+
+<footer>
+	&copy; {today.getFullYear()} Lauren Beckman. All rights reserved.
+	<div class="social-links">
+		<a href="https://www.instagram.com/laurenebeckman_/" target="_blank" aria-label="Instagram">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+			</svg>
+		</a>
+		<a href="https://x.com/laurenebeckman" target="_blank" aria-label="X">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+				<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.733-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+			</svg>
+		</a>
+		<a href="https://www.linkedin.com/in/laurenebeckman/" target="_blank" aria-label="LinkedIn">
+			<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+			</svg>
+		</a>
+	</div>
+</footer>
+
+<button id="back-to-top" aria-label="Back to top" title="Back to top">
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
+<script>
+  const btn = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    btn?.classList.toggle('visible', window.scrollY > 300);
+  });
+  btn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+
+<style>
+	footer {
+		padding: 2em 1em 6em 1em;
+		background: linear-gradient(var(--gray-gradient)) no-repeat;
+		color: rgb(var(--gray));
+		text-align: center;
+	}
+	.social-links {
+		display: flex;
+		justify-content: center;
+		gap: 1em;
+		margin-top: 1em;
+	}
+	.social-links a {
+		text-decoration: none;
+		color: rgb(var(--gray));
+	}
+	.social-links a:hover {
+		color: rgb(var(--gray-dark));
+	}
+
+	#back-to-top {
+		position: fixed;
+		bottom: 2rem;
+		right: 2rem;
+		width: 2.5rem;
+		height: 2.5rem;
+		border-radius: 50%;
+		border: 1.5px solid rgb(224 205 200);
+		background: rgb(253 249 247 / 0.9);
+		color: rgb(163 109 119);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		opacity: 0;
+		transform: translateY(8px);
+		transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
+		pointer-events: none;
+		backdrop-filter: blur(6px);
+		box-shadow: 0 2px 12px rgb(163 109 119 / 0.15);
+		z-index: 50;
+	}
+	#back-to-top.visible {
+		opacity: 1;
+		transform: translateY(0);
+		pointer-events: auto;
+	}
+	#back-to-top:hover {
+		background: rgb(245 236 232);
+		color: rgb(158 96 112);
+	}
+</style>

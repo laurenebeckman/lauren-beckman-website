@@ -1,0 +1,78 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import SubstackFeed from '../components/SubstackFeed.astro';
+import InstagramGrid from '../components/InstagramGrid.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en" class="scroll-pt-20 scroll-smooth">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      main { width: 100%; max-width: 100%; margin: 0; padding: 0; }
+      .hero-img { height: 100% !important; object-position: center 60%; }
+    </style>
+  </head>
+  <body class="bg-background text-foreground">
+    <Header />
+
+    <main>
+      <!-- Hero -->
+      <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <img
+          src="/images/hero.jpg"
+          alt="Lauren Beckman at Machu Picchu"
+          class="hero-img absolute inset-0 w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-linear-to-b from-black/25 via-black/45 to-black/65"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white -translate-y-24">
+          <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-3 text-white! drop-shadow-2xl">
+            Lauren Beckman
+          </h1>
+          <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 text-white/90">
+            Writing • Recipes • Photography
+          </p>
+          <p class="hidden sm:block text-base md:text-xl lg:text-xl max-w-md mx-auto mb-12 text-white/80 -translate-y-4">
+            Personal essays, recipes, and photography by Lauren Beckman, a law student, engineer, and lifelong curious person.
+          </p>
+
+          <div class="hidden sm:flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4">
+            <a href="#essays"
+               class="group bg-primary hover:bg-primary/90 text-primary-foreground px-9 sm:px-7 py-4 sm:py-3.5 rounded-full font-medium sm:font-base text-lg sm:text-md transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 shadow-lg">
+              Read Latest Essays
+            </a>
+            <a href="#recipes"
+               class="group border-2 border-white/80 hover:bg-white/10 text-white px-9 sm:px-7 py-4 sm:py-3.5 rounded-full font-medium sm:font-base text-lg sm:text-md transition-all duration-300 hover:scale-105 active:scale-95">
+              Browse Recipes
+            </a>
+            <a href="#photography"
+               class="group border-2 border-white/80 hover:bg-white/10 text-white px-9 sm:px-7 py-4 sm:py-3.5 rounded-full font-medium sm:font-base text-lg sm:text-md transition-all duration-300 hover:scale-105 active:scale-95">
+              View Photography
+            </a>
+          </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <a href="#essays"
+            class="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors cursor-pointer">
+          <span class="text-xs tracking-[3px] font-light">SCROLL TO EXPLORE</span>
+          <div class="w-px h-8 bg-linear-to-b from-transparent via-white/60 to-transparent"></div>
+        </a>
+      </section>
+
+      <!-- Substack Feeds -->
+      <div class="max-w-6xl mx-auto px-6 py-16">
+        <SubstackFeed />
+      </div>
+
+      <!-- Instagram Photography -->
+      <InstagramGrid />
+    </main>
+
+    <Footer />
+  </body>
+</html>
