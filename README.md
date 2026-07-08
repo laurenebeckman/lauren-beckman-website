@@ -1,6 +1,6 @@
 # LaurenEBeckman.com
 
-My personal website that is a place for my writing, recipes, and photography.
+My personal website that is a home for my writing, recipes, and photography.
 
 ## ✨ Live Site
 [→ Visit laurenebeckman.com](https://laurenebeckman.com/)
@@ -15,19 +15,19 @@ My personal website that is a place for my writing, recipes, and photography.
 ## Tech Stack
 - [Astro](https://astro.build): static site framework
 - Tailwind CSS v4: utility-first styling
-- Playfair Display + Inter: typography
-- RSS/Atom feed integration via rss-parser
-- Vercel: hosting and deployment
-- Porkbun: custom domain
+- Playfair Display + Inter (typography)
+- RSS/Atom feed integration
+- Vercel (hosting)
+- Porkbun (custom domain)
 
 ## Features
 - Server-side Substack RSS feed integration
-- Responsive mobile-first design
+- Fully-responsive, mobile-first design
 - Custom favicon and brand palette
 - Instagram photography grid
-- SEO meta tags and sitemap
+- SEO-friendly with sitemap
 
 ## Development
-This is the public version of my website. My full development history lives in a separate private repo.
+This is the **public version** of my website. My full development history lives in a separate private repo.
 
 Made with ❤️ by Lauren Beckman
