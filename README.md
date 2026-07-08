@@ -22,7 +22,7 @@ My personal website that is a home for my writing, recipes, and photography.
 
 ## Features
 - Server-side Substack RSS feed integration
-- Fully-responsive, mobile-first design
+- Fully responsive, mobile-first design
 - Custom favicon and brand palette
 - Instagram photography grid
 - SEO-friendly with sitemap
@@ -31,3 +31,6 @@ My personal website that is a home for my writing, recipes, and photography.
 This is the **public version** of my website. My full development history lives in a separate private repo.
 
 Made with ❤️ by Lauren Beckman
+
+## License
+This project is licensed under [Creative Commons Attribution-NonCommercial 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
