@@ -21,47 +21,41 @@ import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
     <main>
       <!-- Hero -->
-      <section class="relative h-screen flex items-center justify-center overflow-hidden">
+      <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <img
           src="/images/hero.jpg"
           alt="Lauren Beckman at Machu Picchu"
           class="hero-img absolute inset-0 w-full h-full object-cover"
+          fetchpriority="high"
         />
         <div class="absolute inset-0 bg-linear-to-b from-black/25 via-black/45 to-black/65"></div>
 
-        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center text-white -translate-y-24">
-          <h1 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-3 text-white! drop-shadow-2xl">
+        <div class="relative z-10 max-w-4xl mx-auto px-6 py-28 text-center text-white">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-3 text-white! drop-shadow-2xl">
             Lauren Beckman
           </h1>
           <p class="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 text-white/90">
             Writing • Recipes • Photography
           </p>
-          <p class="hidden sm:block text-base md:text-xl lg:text-xl max-w-md mx-auto mb-12 text-white/80 -translate-y-4">
-            Personal essays, recipes, and photography by Lauren Beckman, a law student, engineer, and lifelong curious person.
+          <p class="text-base md:text-xl max-w-xl mx-auto mb-10 text-white/85">
+            A law student and engineer beneath the sun, and a writer, photographer, and cook once the light fades.
           </p>
 
-          <div class="hidden sm:flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4">
+          <div class="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4">
             <a href="#essays"
-               class="group bg-primary hover:bg-primary/90 text-primary-foreground px-9 sm:px-7 py-4 sm:py-3.5 rounded-full font-medium sm:font-base text-lg sm:text-md transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 shadow-lg">
-              Read Latest Essays
+               class="group bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3.5 rounded-full font-medium text-lg transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 shadow-lg">
+              Read essays
             </a>
             <a href="#recipes"
-               class="group border-2 border-white/80 hover:bg-white/10 text-white px-9 sm:px-7 py-4 sm:py-3.5 rounded-full font-medium sm:font-base text-lg sm:text-md transition-all duration-300 hover:scale-105 active:scale-95">
-              Browse Recipes
+               class="group border-2 border-white/80 hover:bg-white/10 text-white px-8 py-3.5 rounded-full font-medium text-lg transition-all duration-300 hover:scale-105 active:scale-95">
+              Browse recipes
             </a>
             <a href="#photography"
-               class="group border-2 border-white/80 hover:bg-white/10 text-white px-9 sm:px-7 py-4 sm:py-3.5 rounded-full font-medium sm:font-base text-lg sm:text-md transition-all duration-300 hover:scale-105 active:scale-95">
-              View Photography
+               class="group border-2 border-white/80 hover:bg-white/10 text-white px-8 py-3.5 rounded-full font-medium text-lg transition-all duration-300 hover:scale-105 active:scale-95">
+              View photography
             </a>
           </div>
         </div>
-
-        <!-- Scroll Indicator -->
-        <a href="#essays"
-            class="absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors cursor-pointer">
-          <span class="text-xs tracking-[3px] font-light">SCROLL TO EXPLORE</span>
-          <div class="w-px h-8 bg-linear-to-b from-transparent via-white/60 to-transparent"></div>
-        </a>
       </section>
 
       <!-- Substack Feeds -->
