@@ -8,9 +8,23 @@ import tailwindcss from '@tailwindcss/vite';
 import vercel from '@astrojs/vercel';
 
 export default defineConfig({
-  output: 'server', 
+  output: 'server',
   site: 'https://laurenebeckman.com',
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      filter: (page) => !page.includes('/blog'),
+    }),
+  ],
+
+  redirects: {
+    '/blog': '/',
+    '/blog/first-post': '/',
+    '/blog/second-post': '/',
+    '/blog/third-post': '/',
+    '/blog/markdown-style-guide': '/',
+    '/blog/using-mdx': '/',
+  },
 
   fonts: [
       {

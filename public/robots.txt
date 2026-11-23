@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://laurenebeckman.com/sitemap-index.xml
